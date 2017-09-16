@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <!--书架列表-->
+  <view scroll-y class="book-list">
+    <block wx:for="{{books}}" wx:key="book-list">
+    <view class="book" bindtap='readBook' bindlongtap='openModel' data-id='{{item.id}}'>
+        <image class="img" mode="scaleToFill" src="{{item.cover}}"></image>
+        <text>{{item.title}}</text>
+    </view>
+    </block>
+  </view>
+  <modal title="确定将此书移除书架吗？" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}"
+        mask bindconfirm="remove" bindcancel="cancel">
+  </modal>
+</view>

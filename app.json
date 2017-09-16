@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/bookmall/bookmall",
+    "pages/classify/classify",
+    "pages/details/details",
+    "pages/book/book",
+    "pages/list/list",
+    "pages/chapter/chapter"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#333333",
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/bookcase1.png",
+      "selectedIconPath": "images/bookcase2.png"
+    },{
+      "pagePath": "pages/bookmall/bookmall",
+      "text": "书城",
+      "iconPath": "images/bookmall1.png",
+      "selectedIconPath": "images/bookmall2.png"
+    }]
+  }
+}

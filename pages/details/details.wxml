@@ -1,0 +1,41 @@
+<block wx:if="{{!loading}}">
+    <view class="container">
+        <scroll-view scroll-x class="intro-meau">
+            <view class="intro-meau__item" wx:for="{{mins}}" wx:key="mins">
+                <view id="{{index}}" style="{{index==changeColor?'color:red':'color:black'}};" bindtap="changeClick" 
+                data-minor="{{item}}">
+                    {{item}}
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view scroll-y class="item" bindscrolltolower="loadMore" style="height:{{scrollHeight}}px;">
+            <view class="item-book" wx:for="{{books}}" wx:key="books" hover-class="hover-name" bindtap="btnClick" 
+                data-id="{{item._id}}" data-author="{{item.author}}">
+                <image mode="scaleToFill" src="{{item.cover}}"></image>
+                <view class="item-book-body">
+                    <text class="text-title">{{item.title}}</text>
+                    <text class="text-intro">{{item.shortIntro}}</text>
+                    <text class="text-author">{{item.author}}</text>
+                </view>
+            </view>
+            <view class="load-more-wrap">
+            <block wx:if="{{hasMore}}">
+                <view class="load-content">
+                    <image class="weui-loading" src='../../images/loading2.png'></image>
+                    <text class="loading-text">正在加载更多...</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="load-content">
+                    <text>没有更多内容了</text>
+                </view>
+            </block>
+            </view>
+        </scroll-view>
+    </view>
+</block>
+<block wx:else>
+    <loading hidden="{{!loading}}">
+        加载中...
+    </loading>
+</block>

@@ -1,0 +1,29 @@
+<block wx:if="{{!loading}}">
+    <view class="container">
+        <!-- 男生分类-->
+        <view class="item">
+            <view class="item-text">男生分类</view>
+            <view class="item-classify">
+                <view wx:for="{{male}}" wx:key="boy" class="item-classify-name" hover-class="hover-name" 
+                bindtap="btnClick" data-name="{{item.name}}" data-detail="male">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+        <!--女生分类-->
+        <view class="item">
+            <view class="item-text">女生分类</view>
+            <view class="item-classify">
+                <view wx:for="{{female}}" wx:key="girl" class="item-classify-name" hover-class="hover-name"   
+                bindtap="btnClick" data-name="{{item.name}}" data-detail="female">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <loading hidden="{{!loading}}">
+        加载中...
+    </loading>
+</block>

@@ -1,0 +1,39 @@
+/**index.wxss**/
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 0 0;
+    display: flex;
+    flex-direction: row;
+}
+.book-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.book{
+    width: 30%;
+    margin: 30rpx 14rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img{
+    width:182rpx;
+    height: 260rpx;
+    display: block;
+}
+text{
+    width:160rpx;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size: 0.8rem;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

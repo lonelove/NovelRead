@@ -1,0 +1,18 @@
+<block wx:if="{{!loading}}">
+    <view class="list">
+    <scroll-view class="body_scroll" scroll-y scroll-top="{{scrollTop}}"
+            style="height: {{scrollHeight}}px;">
+        <block wx:for="{{chapters}}" wx:key="chapter" >
+            <view id="{{index}}" style="{{index==changeColor?'color:red':'color:black'}};" 
+                class="item_view" bindtap="readBook">
+                <text>{{item.title}}</text>
+            </view>
+        </block>
+    </scroll-view>
+    </view>
+</block>
+<block wx:else>
+    <loading hidden="{{!loading}}">
+        加载中...
+    </loading>
+</block>

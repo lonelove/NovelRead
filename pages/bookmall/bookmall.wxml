@@ -1,0 +1,26 @@
+<import src="/wxSearch/wxSearch.wxml"/>
+    <view class="search bar1"> 
+        <view class="form">
+        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}"                        bindblur="wxSearchBlur" placeholder="请输入您要搜索的内容..."/>
+        <button bindtap="wxSearchFn"></button>
+        </view>
+    </view>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+<view class="container">
+    <view class="item">
+        <image src="../../images/bookmall/free.png"></image>
+        <text>免费</text>
+    </view>
+    <view class="item" bindtap="">
+        <image src="../../images/bookmall/rank.png"></image>
+        <text>排行</text>
+    </view>
+    <view class="item" bindtap="classifyClick">
+        <image src="../../images/bookmall/classify.png"></image>
+        <text>分类</text>
+    </view>
+    <view class="item">
+        <image src="../../images/bookmall/book.png"></image>
+        <text>完本</text>
+    </view>
+</view>

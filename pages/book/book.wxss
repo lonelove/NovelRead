@@ -1,0 +1,102 @@
+.container{
+    padding: 0 0;
+    display: flex;
+}
+.book-title{
+    display: flex;
+    width:100%;
+}
+.book-title_pic{
+    width:182rpx;
+    height: 260rpx;
+    margin-top: 80rpx;
+    margin-left: 80rpx;
+}
+.book-title_name{
+    width:55%;
+    height:260rpx;
+    margin-top: 80rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+text{
+    margin-top: 20rpx;
+    font-size: 0.7em;
+}
+.book-body{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border-bottom: 16rpx solid #DDDDDD;
+}
+.book-body_btn{
+    width: 100%;
+    display: flex;
+    margin-top: 60rpx;
+}
+.book-read{
+    border: 2rpx solid #cccccc;
+    border-radius: 10rpx;
+    padding: 12rpx 24rpx;
+    margin: 0 40rpx; 
+    background-color: #FF7F24;
+    color: white;
+}
+.book-add{
+    border: 2rpx solid black;
+    border-radius: 10rpx;
+    padding: 12rpx 24rpx;
+    margin-right: 40rpx;
+    width:176rpx;
+    text-align: center;
+}
+.book-add-select{
+    border: 2rpx solid #cccccc;
+    border-radius: 10rpx;
+    padding: 12rpx 24rpx;
+    margin-right: 40rpx;
+    width:176rpx;
+    color: #cccccc;
+    text-align: center;
+}
+.book-body_intro{
+    width:100%;
+    margin: 20rpx 40rpx;
+}
+
+
+.book-author, .book-para{
+    margin: 20rpx 20rpx;
+    align-self: flex-start;
+}
+.author-books, .para-books{
+    width: 100%;
+    white-space:nowrap;
+    border-bottom: 16rpx solid #DDDDDD;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.author-book, .para-book{
+    margin: 20rpx 20rpx;
+    display:inline-block;
+    text-align: center;
+    vertical-align:top;
+    width:154rpx;
+}
+text{
+    white-space:normal;
+    display:inline-block;
+}
+image{
+    width:154rpx;
+    height: 220rpx;
+    display: block;
+}
+.hover-name{
+    background-color: #e6e6e6;
+}

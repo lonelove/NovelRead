@@ -1,0 +1,53 @@
+<block wx:if="{{!loading}}">    
+    <view class="container">
+    <!--书籍信息-->
+    <view class="book-title">
+        <image class="book-title_pic" src="{{cover}}"></image> 
+        <view class="book-title_name">
+            <text style="font-size: 1.1rem;font-weight: bold;">{{title}}</text>
+            <text style="color: #999999;">{{author}}</text>
+            <text style="color: #999999;">{{majorCate}}/{{minorCate}}</text>
+        </view>
+    </view>
+    <view class="book-body">
+        <view class="book-body_btn">
+            <view class="book-read" bindtap="readBook">开始阅读</view>
+            <view class="{{isBookSave?'book-add-select':'book-add'}}" bindtap="{{isBookSave?none:'addBookStore'}}">
+                {{isBookSave?"已添加":"加入书架"}}
+            </view>
+        </view>
+        <view class="book-body_intro">
+            {{longIntro}}
+        </view>
+    </view>
+    <!--目录-->
+    <!--作者相关-->
+    <view class="book-author">
+        作者所有作品
+    </view>
+    <scroll-view scroll-x class="author-books">
+        <view class="author-book" wx:for="{{author_books}}" wx:key="a_bs" hover-class="hover-name" bindtap="btnClick" data-id="{{item._id}}" data-author="{{item.author}}">
+            <image class="book_image" src="{{item.cover}}"></image>
+            <text>{{item.title}}</text>
+        </view>
+    </scroll-view>
+    <!--类似书籍-->
+    <view class="book-para">
+        同类书籍
+    </view>
+    <scroll-view scroll-x class="para-books">
+        <view class="para-book" wx:for="{{recom_books}}" wx:key="rec_bs" hover-class="hover-name" bindtap="btnClick" data-id="{{item._id}}" data-author="{{item.author}}">
+            <image class="book_image" src="{{item.cover}}"></image>
+            <text>{{item.title}}</text>
+        </view>
+    </scroll-view>
+    <toast hidden="{{toast}}" duration="1000" bindchange="toastHide">
+        已添加至书架
+    </toast>
+    </view>
+</block>
+<block wx:else>
+    <loading hidden="{{!loading}}">
+        加载中...
+    </loading>
+</block>
